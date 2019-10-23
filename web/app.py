@@ -17,7 +17,7 @@ CORS(app)
 actividades_List = ['Agricultura', 'Comercio',
 'Investigación', 'Insumos', 'Transporte']
 
-@app.route('/formulario', methods = ['GET'])
+@app.route('/', methods = ['GET'])
 def formulario():
     return render_template('formulario.html', actividades = actividades_List)
 
