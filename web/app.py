@@ -25,12 +25,10 @@ def formulario():
 def guardarParticipante():
     participantes = dict(request.values)
     participantes['cedula'] = int(participantes['cedula'])
-    requests.post('http://localhost:5000/mediciones/addValue', json = participantes)
+    requests.post('https://api-evergreen-979.azurewebsites.net/mediciones/addValue', json = participantes)
     return (listar())
 
 @app.route('/listar', methods = ['GET'])
 def listar():
-    participantes_List = requests.get('http://localhost:5000/listarMediciones').json()
+    participantes_List = requests.get('https://api-evergreen-979.azurewebsites.net/listarMediciones').json()
     return render_template('listar.html', list = participantes_List)
-
-app.run(port=8000, debug=True)
