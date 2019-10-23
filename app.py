@@ -32,6 +32,3 @@ def guardarParticipante():
 def listar():
     participantes_List = requests.get('https://api-evergreen-979.azurewebsites.net/listarMediciones').json()
     return render_template('listar.html', list = participantes_List)
-
-if __name__ == "__main__":
-    app.run()
